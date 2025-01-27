@@ -31,8 +31,21 @@ class _HomeViewState extends State<HomeView> {
 
   Future refreshNotes() async {
     setState(() => isLoading = true);
-    notes = await NotesDatabase.instance.readAllNotes();
-    setState(() => isLoading = false);
+    try {
+      final allNotes = await NotesDatabase.instance.readAllNotes();
+      setState(() => notes = allNotes);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Failed to read notes'),
+        ),
+      );
+    }
+    finally {
+      setState(() => isLoading = false);
+    }
+
+
   }
 
   @override
