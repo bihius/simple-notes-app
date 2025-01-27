@@ -1,10 +1,3 @@
-########################################################
-Wykonał: Konrad Kasperkiewicz, 52703
-Repozytorium: github.com/bihius/simple-notes-app
-########################################################
-
-edit1: przepraszam za ucięte zrzuty ekranu w pdf, niestety mój edytor markdown ma problem z eksportem do pdf
-
 # Projekt flutter
 Projekt ten jest aplikacją mobilną napisaną w języku Dart przy użyciu frameworka Flutter. W aplikacji tej użytkownik może tworzyć notatki oraz je edytować. Notatki te są zapisywane w bazie SQLite. Do aplikacji użytkownik musi się autoryzować za pomocą danych, które są również zapisywane w bazie SQLite. Informacje o tym, czy użytkownik jest zalogowany i na jakie konto, przechowywane są w Shared Preferences.
 
