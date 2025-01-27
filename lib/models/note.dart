@@ -43,7 +43,7 @@ class Note{
  static Note fromJson(Map<String, Object?> json) => Note(
     id: json[NoteFields.id] as int?,
     number: json[NoteFields.number] as int,
-    isFavourite: json[NoteFields.isFavourite] == 1,
+    isFavourite: json[NoteFields.isFavourite] == 0,
     title: json[NoteFields.title] as String,
     createdTime: json[NoteFields.createdTime] as String,
     data: json[NoteFields.data] as String,
