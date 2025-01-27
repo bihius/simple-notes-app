@@ -1,7 +1,7 @@
-######################################################
+########################################################
 Wykonał: Konrad Kasperkiewicz, 52703
 Repozytorium: github.com/bihius/simple-notes-app
-######################################################
+########################################################
 
 edit1: przepraszam za ucięte zrzuty ekranu w pdf, niestety mój edytor markdown ma problem z eksportem do pdf
 
