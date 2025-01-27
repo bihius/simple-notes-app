@@ -7,6 +7,8 @@ import 'package:dsw52703/views/widgets/header_text.dart';
 import 'package:dsw52703/views/widgets/pink_button.dart';
 import 'package:dsw52703/db/users_database.dart';
 import 'package:dsw52703/views/home/home_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -96,10 +98,12 @@ class _LoginViewState extends State<LoginView> {
       final password = _passwordController.text;
       final user = await UsersDatabase.instance.readUserByEmail(email);
       if (user.password == password) {
-        Navigator.push(
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('loggedInUser', email);
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeView()
+            builder: (context) => HomeView(),
           ),
         );
       } else {
@@ -109,7 +113,6 @@ class _LoginViewState extends State<LoginView> {
       }
     }
   }
-}
 
 Widget _forgetPassword(BuildContext context) {
   return Align(
@@ -157,4 +160,4 @@ Widget _dontHaveAccount(BuildContext context) {
       ),
     ],
   );
-}
+}}
