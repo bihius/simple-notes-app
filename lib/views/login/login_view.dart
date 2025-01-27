@@ -31,18 +31,18 @@ class _LoginViewState extends State<LoginView> {
           width: double.infinity,
           child: Column(
             children: <Widget>[
-              const Spacer(flex: 62),
+              const SizedBox(height: 62),
               // Logo
               Image.asset(MyImages.logo),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(21.0),
                 child: Form(
                   key: _formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       headerText('Sign In'),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 40),
 
                       TextFormFieldWithIcon(
                         hintText: 'Email or Username',
@@ -83,8 +83,9 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ),
-              const Spacer(flex: 350),
+              const Spacer(flex: 500),
               _dontHaveAccount(context),
+              const Spacer(flex: 62),
             ],
           ),
         ),

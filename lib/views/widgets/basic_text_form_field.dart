@@ -22,7 +22,6 @@ class TextFormFieldWithIcon extends StatefulWidget {
 }
 
 class _TextFormFieldWithIconState extends State<TextFormFieldWithIcon> {
-  /// Kontrolujemy lokalnie widoczność hasła, jeśli `obscureText = true`.
   late bool _isObscured;
 
   @override
@@ -46,14 +45,13 @@ class _TextFormFieldWithIconState extends State<TextFormFieldWithIcon> {
         hintStyle: TextStyle(
           color: MyColors.blackColor.withOpacity(0.3),
         ),
-        prefixIcon: Icon(widget.icon, size: 30),
-        // Ikonka do włączania/wyłączania widoczności hasła,
-        // tylko jeśli pole ma być zasłaniane.
+        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+        prefixIcon: Icon(widget.icon, size: 34),
         suffixIcon: widget.obscureText
             ? IconButton(
           icon: Icon(
             _isObscured ? Icons.visibility_off : Icons.visibility,
-            size: 20,
+            size: 24,
           ),
           onPressed: () {
             setState(() {

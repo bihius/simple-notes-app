@@ -4,10 +4,12 @@ import 'package:dsw52703/utils/colors.dart';
 Widget backButton(BuildContext context) {
   return Align(
     alignment: Alignment.topLeft,
+
     child: Row(
+      // spacing: -15,
       children: [
         IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
+          icon: const Icon(Icons.keyboard_arrow_left_rounded, size: 38,),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -18,7 +20,7 @@ Widget backButton(BuildContext context) {
           },
           child: Text(
             'Back',
-            style: TextStyle(color: MyColors.purpleColor, fontSize: 12),
+            style: TextStyle(color: MyColors.purpleColor, fontSize: 12, fontWeight: FontWeight.w400),
           ),
         ),
       ],

@@ -34,11 +34,21 @@ class _RegisterViewState extends State<RegisterView> {
 
   Future<void> _registerUser() async {
     if (_formKey.currentState!.validate()) {
+      if (_passwordController.text != _confirmPasswordController.text) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Passwords do not match'),
+          ),
+        );
+        return;
+      }
       final user = User(
         name: _nameController.text,
         email: _emailController.text,
         password: _passwordController.text,
       );
+
+
       await UsersDatabase.instance.create(user);
       // for debbuging purposes
       // final db = await UsersDatabase.instance.database;
@@ -46,6 +56,7 @@ class _RegisterViewState extends State<RegisterView> {
       // for (var user in users) {
       //   print(user);
       // }
+      // ignore: unnecessary_null_comparison
       if (user != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -70,6 +81,9 @@ class _RegisterViewState extends State<RegisterView> {
           width: double.infinity,
           child: Column(
             children: [
+              const Spacer(flex: 62),
+              backButton(context),
+              const SizedBox(height: 80),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Form(
@@ -77,8 +91,6 @@ class _RegisterViewState extends State<RegisterView> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      backButton(context),
-                      const SizedBox(height: 20),
                       headerText('Sign Up'),
                       const SizedBox(height: 40),
 
@@ -150,8 +162,9 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
               ),
 
-              const Spacer(flex: 350),
+              const Spacer(flex: 500),
               _alreadyHaveAccount(context),
+              const Spacer(flex: 62),
             ],
           ),
         ),

@@ -11,7 +11,7 @@ Widget pinkButton(BuildContext context, String text, {Function()? onPressed}) {
     },
     style: ElevatedButton.styleFrom(
       backgroundColor: MyColors.pinkColor,
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 17),
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
