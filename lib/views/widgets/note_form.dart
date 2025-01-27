@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dsw52703/utils/colors.dart';
 
 class NoteFormWidget extends StatelessWidget {
   final bool? isFavourite;
