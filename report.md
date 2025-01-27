@@ -3,6 +3,8 @@ Wykonał: Konrad Kasperkiewicz, 52703
 Repozytorium: github.com/bihius/simple-notes-app
 #################################################
 
+edit1: przepraszam za ucięte zrzuty ekranu, niestety mój edytor markdown ma problem z eksportem do pdf
+
 # Projekt flutter
 Projekt ten jest aplikacją mobilną napisaną w języku Dart przy użyciu frameworka Flutter. W aplikacji tej użytkownik może tworzyć notatki oraz je edytować. Notatki te są zapisywane w bazie SQLite. Do aplikacji użytkownik musi się autoryzować za pomocą danych, które są również zapisywane w bazie SQLite. Informacje o tym, czy użytkownik jest zalogowany i na jakie konto, przechowywane są w Shared Preferences.
 
@@ -80,29 +82,36 @@ Zawiera implementację widżetu `headerText`, który wyświetla nagłówek tekst
 ### `lib/views/widgets/pink_button.dart`
 Zawiera implementację widżetu `pinkButton`, który jest używany jako przycisk w aplikacji.
 
+I parę innych plików, których opisywanie tu minełoby się z celem...
+
 ## Wyzwania
 
 Na początku największym (urojonym) wyzwaniem było stworzenie całego layoutu na ekranie logowania. Okazało się jednak, że stworzenie tego nie było wcale takie trudne. Trudności dopiero pojawiły się w szczegółach, lub raczej dopiero po ich zauważeniu - przycisk do odkrycia hasła zagwiastkowywał po kliknięciu pole loginu - z problemem tym borykałem się całkiem sporo czasu, ponieważ wymagałem od siebie najprostszego ale i najbardziej logicznego rozwiązania. Kolejnym problemem, drobnym lecz bardzo denerwującym, okazały się wartości w `InitialValue`. Uważam, że nie skorzystałbym z aplikacji, która automatycznie usuwa domyślną zawartość pól tekstowych po kliknięciu w nie, stąd też musiałem się zapoznać z mechanizmami controllera oraz focusnode aby to naprawić.
 
 Kolejnym problemem, który napotkałem, dotyczył obsługi bazy danych. Okazało się, że potrzeba dużo czasu na zrozumienie, jak działa SQLite w Flutterze, i jak z niego korzystać w "rozsądny" sposób. Niestety, nie udało mi się zaimplementować wszystkich funkcjonalności, które chciałem, ale jestem zadowolony z tego, co udało mi się osiągnąć. Przede wszystkim brakuje korelacji między notatkami a użytkownikami, co uniemożliwia zapisywanie notatek dla konkretnego użytkownika.
 
-Ikonka do wyszukiwania oraz "Forget Password" nie działają, ponieważ nie zdążyłem zaimplementować ich w całości. 
+Ikonka do wyszukiwania oraz "Forget Password" nie działają, ponieważ nie zdążyłem zaimplementować ich w całości.
 
 ## Wnioski
-- 
-- Nauka Fluttera: Tworzenie tej aplikacji pozwoliło mi na głębsze zrozumienie frameworka Flutter. Praca z różnymi widżetami i zarządzanie stanem aplikacji były kluczowymi elementami, które pomogły mi lepiej zrozumieć, jak działa Flutter.  
-- Obsługa baz danych: Implementacja SQLite w aplikacji była wyzwaniem, ale również cenną lekcją. Zrozumienie, jak działa lokalna baza danych i jak efektywnie zarządzać danymi, było kluczowe dla sukcesu projektu.  
-- Zarządzanie stanem: Praca z formularzami i walidacją danych nauczyła mnie, jak ważne jest zarządzanie stanem w aplikacji. Użycie TextEditingController i GlobalKey<FormState> było niezbędne do poprawnego działania formularzy.  
-- Interfejs użytkownika: Tworzenie intuicyjnego i estetycznego interfejsu użytkownika było jednym z głównych celów projektu. Użycie spójnych widżetów, takich jak TextFormFieldWithIcon i pinkButton, pomogło w osiągnięciu tego celu.  
-- Debugowanie i testowanie: Podczas tworzenia aplikacji napotkałem wiele problemów, które wymagały debugowania i testowania. Było to cenne doświadczenie, które nauczyło mnie, jak ważne jest dokładne testowanie aplikacji na różnych etapach jej tworzenia.   
-- Brakujące funkcjonalności: Nie udało mi się zaimplementować wszystkich planowanych funkcjonalności, takich jak wyszukiwanie notatek i resetowanie hasła. Było to cenne doświadczenie, które nauczyło mnie, jak ważne jest realistyczne planowanie i priorytetyzacja zadań.  
+- Nauka Fluttera: Tworzenie tej aplikacji pozwoliło mi na głębsze zrozumienie frameworka Flutter. Praca z różnymi widżetami i zarządzanie stanem aplikacji były kluczowymi elementami, które pomogły mi lepiej zrozumieć, jak działa Flutter.
+- Obsługa baz danych: Implementacja SQLite w aplikacji była wyzwaniem, ale również cenną lekcją. Zrozumienie, jak działa lokalna baza danych i jak efektywnie zarządzać danymi, było kluczowe dla sukcesu projektu.
+- Zarządzanie stanem: Praca z formularzami i walidacją danych nauczyła mnie, jak ważne jest zarządzanie stanem w aplikacji. Użycie TextEditingController i GlobalKey<FormState> było niezbędne do poprawnego działania formularzy.
+- Interfejs użytkownika: Tworzenie intuicyjnego i estetycznego interfejsu użytkownika było jednym z głównych celów projektu. Użycie spójnych widżetów, takich jak TextFormFieldWithIcon i pinkButton, pomogło w osiągnięciu tego celu.
+- Debugowanie i testowanie: Podczas tworzenia aplikacji napotkałem wiele problemów, które wymagały debugowania i testowania. Było to cenne doświadczenie, które nauczyło mnie, jak ważne jest dokładne testowanie aplikacji na różnych etapach jej tworzenia.
+- Brakujące funkcjonalności: Nie udało mi się zaimplementować wszystkich planowanych funkcjonalności, takich jak wyszukiwanie notatek i resetowanie hasła. Było to cenne doświadczenie, które nauczyło mnie, jak ważne jest realistyczne planowanie i priorytetyzacja zadań.
 
 ## Zrzuty ekranu
-![LoginScreen](![sign_in.png](screenshots/sign_in.png)
-![RegisterScreen](![sign_up.png](screenshots/sign_up.png)
-![HomeScreen](![home.png](screenshots/home_screen.png)
-![NoteScreen](![note.png](screenshots/view_note.png)
-![AddNoteScreen](![add_note.png](screenshots/new_note.png)
-![AddNoteScreen](![edit_note.png](screenshots/edit_note.png)
+### LoginScreen
+![sign_in.png](screenshots/sign_in.png)
+### RegisterScreen
+![sign_up.png](screenshots/sign_up.png)
+### HomeScreen
+![home.png](screenshots/home_screen.png)
+### NoteScreen
+![note.png](screenshots/view_note.png)
+### AddNoteScreen
+![add_note.png](screenshots/new_note.png)
+### AddNoteScreen
+![edit_note.png](screenshots/edit_note.png)
 
 
