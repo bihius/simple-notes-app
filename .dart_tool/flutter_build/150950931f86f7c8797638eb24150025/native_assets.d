@@ -1,0 +1,1 @@
+ /Users/monte/szkola/aplikacje/dsw52703/.dart_tool/flutter_build/150950931f86f7c8797638eb24150025/native_assets.yaml: 

@@ -1,0 +1,40 @@
+name: dsw52703
+description: "Projekt zaliczeniowy"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  very_good_analysis: ^7.0.0
+  sqflite: ^2.0.0+3
+  flutter_staggered_grid_view: ^0.4.0
+  path: ^1.8.0
+  intl: ^0.20.2
+  shared_preferences: ^2.4.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+linter:
+  rules:
+    public_member_api_docs: false
+    flutter_style_todos: false
+    lines_longer_than_80_chars: false
+    invariant_booleans: false
+    use_build_context_synchronously: false
+    sort_constructors_first: false
